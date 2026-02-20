@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['todo-server.database.windows.net']
+ALLOWED_HOSTS = ['saric-todo-f9a6gya7hvhzd0hp.polandcentral-01.azurewebsites.net']
 
 
 # Application definition
