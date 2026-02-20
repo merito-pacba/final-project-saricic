@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-)h#@ymsz)#*74lf5kzygs%l!x#)$!(co_jb-ff3!&pzu-ncd-3"
+#SECRET_KEY = "django-insecure-)h#@ymsz)#*74lf5kzygs%l!x#)$!(co_jb-ff3!&pzu-ncd-3"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -77,17 +77,18 @@ import os
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sql_server.pyodbc',  # Azure SQL kullanıyorsan
+        'ENGINE': 'mssql',
         'NAME': os.environ.get('DB_NAME'),
         'USER': os.environ.get('DB_USER'),
         'PASSWORD': os.environ.get('DB_PASSWORD'),
         'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT', 1433),
+        'PORT': os.environ.get('DB_PORT', '1433'),
         'OPTIONS': {
             'driver': 'ODBC Driver 18 for SQL Server',
         },
     }
 }
+
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 
