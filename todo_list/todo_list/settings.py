@@ -27,7 +27,15 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['saric-todo-f9a6gya7hvhzd0hp.polandcentral-01.azurewebsites.net']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://saric-todo-f9a6gya7hvhzd0hp.polandcentral-01.azurewebsites.net',  # mutlaka https ile yazın
+]
 
+CSRF_COOKIE_SECURE = True  # sadece HTTPS üzerinden gönderilsin
+SESSION_COOKIE_SECURE = True  # session cookie de güvenli olsun
+
+CSRF_COOKIE_SAMESITE = 'Lax'  # veya 'Strict', ihtiyaca göre
+SESSION_COOKIE_SAMESITE = 'Lax'
 # Application definition
 
 INSTALLED_APPS = [
